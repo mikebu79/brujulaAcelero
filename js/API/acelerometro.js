@@ -2,7 +2,6 @@ var ac = {
 	watchID: null,
 	options: {frequency:500},
 	init: function(){
-		alert(1);
 		if(!ac.watchID)
 			ac.watchID = navigator.accelerometer.watchAcceleration(ac.success, ac.error, ac.options);
 	},
@@ -13,7 +12,6 @@ var ac = {
         $('#acelerometro .scroll h2').html('Detenido');
 	},
 	success: function(a){
-		alert(2);
 		$('#acelerometro .scroll h2').html('X: ' + a.x +
 										   'Y: ' + a.y +
 										   'Z: ' + a.z);
