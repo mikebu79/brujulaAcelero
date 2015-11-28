@@ -6,10 +6,11 @@ var ac = {
 			ac.watchID = navigator.accelerometer.watchAcceleration(ac.success, ac.error, ac.options);
 	},
 	stop: function(){
-		if(ac.watchID != null)
-			navigator.accelerometer.clearWatch(ac.watchID);
-        
-        $('#acelerometro .scroll h2').html('Detenido');
+		if(ac.watchID != null){
+            navigator.accelerometer.clearWatch(ac.watchID);
+            ac.watchID = null;
+            $('#acelerometro .scroll h2').html('Detenido');
+        }
 	},
 	success: function(a){
 		$('#acelerometro .scroll h2').html('X: ' + a.x +
